@@ -1,0 +1,45 @@
+.skills {
+  color: white;
+  display: grid;
+  row-gap: 1rem;
+  &__box {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(5em, 35em));
+    gap: 1rem;
+    &-skill {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &-logo {
+        width: 50px;
+      }
+    }
+  }
+  &__img {
+    display: none;
+  }
+}
+
+@media (min-width: 800px) {
+  .skills {
+    grid-template-columns: repeat(3, minmax(10em, 35em));
+    grid-template-rows: auto;
+
+    &__box {
+      grid-column: 1 / 3;
+      grid-template-columns: repeat(3, minmax(5em, 15em));
+    }
+
+    &__message {
+      grid-column: 1 / 3;
+    }
+
+    &__img {
+      grid-column: 3 / 4;
+      grid-row: 1 / 3;
+      display: unset;
+      overflow: hidden;
+    }
+  }
+}

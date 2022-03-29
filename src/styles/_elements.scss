@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+  font-family: $font-main-type;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $main-dark-colour;
+}
+
+main {
+  padding: 1em;
+  max-width: 64rem;
+  margin-inline: auto;
+  display: grid;
+  row-gap: 6rem;
+}
+
+footer {
+  background-color: $red-wine-colour;
+}
+
+.btn {
+  background-color: $main-red-colour;
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.5rem;
+  font-size: clamp(1.5rem, 3vw, 1.5rem);
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+.txt-title {
+  font-size: clamp(3rem, 10vw, 4rem);
+}
+
+.txt-subtitle {
+  font-size: clamp(2rem, 8vw, 2.5rem);
+}
+
+.txt-text {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.txt-bar {
+  border-left: 0.5rem solid $main-red-colour;
+  padding-left: 0.5rem;
+  max-height: 5rem;
+}
+
+.tag__box {
+  display: flex;
+  column-gap: 0.5rem;
+  &-tag {
+    background-color: $main-red-colour;
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.5rem;
+  }
+}
+
+.link__box {
+  display: flex;
+  column-gap: 0.5rem;
+  &-center {
+    justify-content: center;
+  }
+}

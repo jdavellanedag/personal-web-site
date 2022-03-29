@@ -1,0 +1,40 @@
+.footer-content {
+  color: white;
+  width: min(100%, 64rem);
+  padding: 1em;
+  margin-inline: auto;
+}
+
+.footer-text {
+  text-align: center;
+  color: gray;
+}
+
+.contact {
+  & form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  .form-input {
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .form-text {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    resize: none;
+  }
+
+  .form-btn {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+  }
+}
