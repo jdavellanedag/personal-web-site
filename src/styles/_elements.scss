@@ -55,6 +55,14 @@ footer {
   font-weight: bold;
 }
 
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
 .txt-bar {
   border-left: 0.5rem solid $main-red-colour;
   padding-left: 0.5rem;
