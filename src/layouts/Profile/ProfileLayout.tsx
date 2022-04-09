@@ -1,7 +1,10 @@
 import { MdSend, MdFileDownload } from "react-icons/md";
 import ProfileImg from "../../assets/img/foto.jpg";
+import { useScroll } from "../../hooks/useScroll";
 
 export const ProfileLayout = () => {
+  const { scrollToDiv } = useScroll();
+
   return (
     <div className="profile">
       <div className="profile__img">
@@ -22,7 +25,7 @@ export const ProfileLayout = () => {
           </p>
         </div>
         <div className="profile__content-actions">
-          <button className="btn">
+          <button className="btn" onClick={() => scrollToDiv("contact")}>
             <MdSend className="is-36" />
             Contactame
           </button>

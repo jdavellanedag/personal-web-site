@@ -1,11 +1,21 @@
+import { useContext, useLayoutEffect, useRef } from "react";
+
+import { AppContext } from "../../context/AppContext";
+
 import { MdArrowBackIos, MdArrowForwardIos, MdLaunch, MdHorizontalRule } from "react-icons/md";
 import { GoMarkGithub } from "react-icons/go";
-
 import CompanyImg from "../../assets/img/company.png";
 
 export const JobsLayout = () => {
+  const { addRef } = useContext(AppContext);
+  const jobRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    addRef(jobRef, "job");
+  }, []);
+
   return (
-    <div className="jobs">
+    <div ref={jobRef} className="jobs">
       <h2 className="txt-title txt-bar">Experiencia</h2>
       <div className="carrusel">
         <div className="carrusel__header">

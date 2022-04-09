@@ -1,6 +1,16 @@
+import { useContext, useLayoutEffect, useRef } from "react";
+import { AppContext } from "../../context/AppContext";
+
 export const BlogLayout = () => {
+  const { addRef } = useContext(AppContext);
+  const blogRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    addRef(blogRef, "blog");
+  }, []);
+
   return (
-    <div className="blogs">
+    <div ref={blogRef} className="blogs">
       <h2 className="txt-title txt-bar">Últimos blogs</h2>
       <div className="blog-entries">
         <div className="blog-entry">

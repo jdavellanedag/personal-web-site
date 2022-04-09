@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { useMediaQuery } from "react-responsive";
+import { useScroll } from "../../../hooks/useScroll";
 import { MobileMenu } from "./MobileMenu";
 
 interface Props {
@@ -7,6 +9,8 @@ interface Props {
 
 export const NavBar = ({ logo }: Props) => {
   const isMobile = useMediaQuery({ maxWidth: 800 });
+
+  const { scrollToDiv } = useScroll();
 
   return (
     <nav className="nav__bar">
@@ -17,13 +21,13 @@ export const NavBar = ({ logo }: Props) => {
         {!isMobile && (
           <ul className="nav__bar-menu-items">
             <li className="nav__bar-menu-item txt-subtitle">
-              <a href="">Trabajos</a>
+              <a onClick={() => scrollToDiv("job")}>Trabajos</a>
             </li>
             <li className="nav__bar-menu-item txt-subtitle">
-              <a href="">Blog</a>
+              <a onClick={() => scrollToDiv("blog")}>Blog</a>
             </li>
             <li className="nav__bar-menu-item txt-subtitle">
-              <a href="">Resumen</a>
+              <a onClick={() => scrollToDiv("contact")}>Contacto</a>
             </li>
           </ul>
         )}

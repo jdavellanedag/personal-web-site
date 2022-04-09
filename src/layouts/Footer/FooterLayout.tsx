@@ -1,9 +1,18 @@
 import { MdArrowForward } from "react-icons/md";
 import { GoMarkGithub } from "react-icons/go";
+import { useContext, useLayoutEffect, useRef } from "react";
+import { AppContext } from "../../context/AppContext";
 
 export const FooterLayout = () => {
+  const { addRef } = useContext(AppContext);
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    addRef(contactRef, "contact");
+  }, []);
+
   return (
-    <div className="footer-content">
+    <div ref={contactRef} className="footer-content">
       <p className="txt-title">
         <b>
           Let's <br />
