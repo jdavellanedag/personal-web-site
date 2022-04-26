@@ -13,21 +13,21 @@ export const ProfileLayout = () => {
       <div className="profile__content">
         <div className="profile__content-title">
           <h1 className="txt-title">
-            Hola! <br />
-            Soy Julian <br />
+            Hi! <br />
+            I'm Julian <br />
             Avellaneda
           </h1>
         </div>
         <div className="profile__content-text txt-text">
           <p>
-            Soy un Desarrollador e Ingeniero de sistemas, apacionado por el mundo del software y
-            dispuesto a asumir cualquier reto.
+            I'm a <b>Fullstack</b> developer and software engineer, passionate about IT, software
+            and coffee. I love to take on challenges and keep up learning and improving.
           </p>
         </div>
         <div className="profile__content-actions">
           <button className="btn" onClick={() => scrollToDiv("contact")}>
             <MdSend className="is-36" />
-            Contactame
+            Let's talk
           </button>
           <button className="btn">
             <MdFileDownload className="is-36" />

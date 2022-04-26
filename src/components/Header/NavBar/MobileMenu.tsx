@@ -32,13 +32,13 @@ export const MobileMenu = () => {
           <div className="mobile__menu">
             <ul className="mobile__menu-items">
               <li className="mobile__menu-item txt-subtitle">
-                <a onClick={() => handleClick("job")}>Trabajos</a>
+                <a onClick={() => handleClick("job")}>Portfolio</a>
               </li>
               <li className="mobile__menu-item txt-subtitle">
                 <a onClick={() => handleClick("blog")}>Blog</a>
               </li>
               <li className="mobile__menu-item txt-subtitle">
-                <a onClick={() => handleClick("contact")}>Contacto</a>
+                <a onClick={() => handleClick("contact")}>Contact</a>
               </li>
             </ul>
           </div>

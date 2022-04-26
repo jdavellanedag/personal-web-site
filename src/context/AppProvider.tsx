@@ -9,6 +9,7 @@ interface TodoProviderProps {
 
 const INITIAL_STATE: AppState = {
   refs: [],
+  lang: "EN",
 };
 
 export const AppProvider = ({ children }: TodoProviderProps) => {

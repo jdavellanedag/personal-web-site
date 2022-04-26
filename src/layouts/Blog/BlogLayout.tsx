@@ -1,8 +1,10 @@
 import { useContext, useLayoutEffect, useRef } from "react";
 import { AppContext } from "../../context/AppContext";
+import { Blog } from "../../data/data";
 
 export const BlogLayout = () => {
   const { addRef } = useContext(AppContext);
+  const { blogs } = Blog;
   const blogRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -11,33 +13,18 @@ export const BlogLayout = () => {
 
   return (
     <div ref={blogRef} className="blogs">
-      <h2 className="txt-title txt-bar">Últimos blogs</h2>
+      <h2 className="txt-title txt-bar">Latest blogs</h2>
       <div className="blog-entries">
-        <div className="blog-entry">
-          <h3 className="txt-text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur dolores aspernatur.
-          </h3>
-          <p className="txt-text">20 Mayo 2022 | Tecnologia</p>
-          <p className="txt-text">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam odit, quo commodi
-            veritatis porro eligendi corporis tenetur culpa quae repellat hic necessitatibus aut
-            doloribus suscipit vitae omnis natus a illum!
-          </p>
-        </div>
-        <div className="blog-entry">
-          <h3 className="txt-text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur dolores aspernatur.
-          </h3>
-          <p className="txt-text">20 Mayo 2022 | Tecnologia</p>
-          <p className="txt-text">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam odit, quo commodi
-            veritatis porro eligendi corporis tenetur culpa quae repellat hic necessitatibus aut
-            doloribus suscipit vitae omnis natus a illum!
-          </p>
-        </div>
+        {blogs.map((blog) => (
+          <div key={blog.id} className="blog-entry">
+            <h3 className="txt-text">{blog.title}</h3>
+            <p className="txt-text">{`${blog.date} | ${blog.subtitle} `}</p>
+            <p className="txt-text">{blog.description}</p>
+          </div>
+        ))}
       </div>
       <a className="txt-text" href="#">
-        Ver todo
+        See more
       </a>
     </div>
   );
