@@ -1,7 +1,11 @@
 import { useState, ChangeEvent } from "react";
 
-export const useForm = (callback: any, initialState = {}) => {
+export const useForm = <T>(callback: any, initialState: T) => {
   const [formValues, setValues] = useState(initialState);
+
+  const reset = () => {
+    setValues(initialState);
+  };
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { target } = event;
@@ -16,5 +20,5 @@ export const useForm = (callback: any, initialState = {}) => {
     await callback(event);
   };
 
-  return { handleInputChange, handleSubmit, formValues };
+  return { handleInputChange, handleSubmit, reset, formValues };
 };

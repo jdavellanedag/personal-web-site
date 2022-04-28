@@ -1,4 +1,4 @@
-import MainLogo from "../../assets/img/ja2.png";
+import MainLogo from "../../assets/img/logo.png";
 import { NavBar } from "../../components/Header";
 
 export const HeaderLayout = () => {

@@ -1,6 +1,5 @@
-import { GoMarkGithub } from "react-icons/go";
-import { MdLaunch } from "react-icons/md";
-import { JobData } from "../interfaces/interfaces";
+import { BsInstagram, BsLinkedin, BsGithub, BsTwitter } from "react-icons/bs";
+import { JobData, Link } from "../interfaces/interfaces";
 import CompanyImg from "../assets/img/company.png";
 import { BlogData } from "../interfaces/blogs";
 import { SkillData } from "../interfaces/skills";
@@ -10,6 +9,33 @@ import NodeLogo from "../assets/img/nodejs-logo.svg";
 import TSLogo from "../assets/img/ts-logo.svg";
 import SpringLogo from "../assets/img/spring-logo.svg";
 import SqlLogo from "../assets/img/sql.svg";
+
+export const ResumeURL: string = `
+https://drive.google.com/file/d/1KgEFasjmb4j_ojjdqAQtFVzdevJRnsr1/view?usp=sharing
+`;
+
+export const SocialLinks: Link[] = [
+  {
+    title: "Instagram",
+    link: "https://instagram.com/jdavellaneda.dev",
+    img: BsInstagram,
+  },
+  {
+    title: "LinkedIn",
+    link: "https://www.linkedin.com/in/jdavellanedag/",
+    img: BsLinkedin,
+  },
+  {
+    title: "Github",
+    link: "https://github.com/jdavellanedag",
+    img: BsGithub,
+  },
+  {
+    title: "Twitter",
+    link: "https://twitter.com/TheZadock",
+    img: BsTwitter,
+  },
+];
 
 export const Data: JobData = {
   jobs: [

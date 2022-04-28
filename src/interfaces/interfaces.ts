@@ -26,8 +26,8 @@ export interface Job {
 
 export interface Link {
   title: string;
-  img?: IconType;
-  link?: string;
+  img: IconType;
+  link: string;
 }
 
 export interface Tag {

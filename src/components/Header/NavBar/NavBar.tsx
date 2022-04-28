@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useScroll } from "../../../hooks/useScroll";
 import { MobileMenu } from "./MobileMenu";

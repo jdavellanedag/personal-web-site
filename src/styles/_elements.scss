@@ -65,6 +65,10 @@ button,
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+}
+
 .pointer-path {
   & path {
     cursor: pointer;
@@ -96,5 +100,9 @@ ul {
   column-gap: 0.5rem;
   &-center {
     justify-content: center;
+  }
+
+  &-link {
+    color: white;
   }
 }

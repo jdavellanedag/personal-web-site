@@ -1,9 +1,16 @@
 import { MdSend, MdFileDownload } from "react-icons/md";
-import ProfileImg from "../../assets/img/foto.jpg";
+
 import { useScroll } from "../../hooks/useScroll";
+import { ResumeURL } from "../../data/data";
+
+import ProfileImg from "../../assets/img/foto.jpg";
 
 export const ProfileLayout = () => {
   const { scrollToDiv } = useScroll();
+
+  const onClick = () => {
+    window.open(ResumeURL, "_blank");
+  };
 
   return (
     <div className="profile">
@@ -29,7 +36,7 @@ export const ProfileLayout = () => {
             <MdSend className="is-36" />
             Let's talk
           </button>
-          <button className="btn">
+          <button className="btn" onClick={onClick}>
             <MdFileDownload className="is-36" />
             Resume
           </button>

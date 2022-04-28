@@ -1,36 +1,54 @@
-import { FormEvent, useContext, useLayoutEffect, useRef } from "react";
+import { useContext, useLayoutEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 import { MdArrowForward } from "react-icons/md";
-import { GoMarkGithub } from "react-icons/go";
+import { Ring } from "@uiball/loaders";
 
 import { AppContext } from "../../context/AppContext";
 import { useForm } from "../../hooks/useForm";
+import { SocialLinks } from "../../data/data";
+
+interface FormField {
+  name: string;
+  email: string;
+  message: string;
+}
+
+const FormData: FormField = {
+  name: "",
+  email: "",
+  message: "",
+};
 
 export const FooterLayout = () => {
   const { addRef, state } = useContext(AppContext);
+  const [sending, setSending] = useState(false);
+  const [sended, setSended] = useState(false);
   const contactRef = useRef<HTMLDivElement>(null);
   const form = useRef<HTMLFormElement>(null);
   const { lang } = state;
 
   const sendEmail = async (form: HTMLFormElement) => {
     try {
+      setSending(true);
       const result = await emailjs.sendForm(
         "service_i1bfjw8",
         "template_sraopum",
         form.target,
         "qnjnyFrIOCfOAJ3ao"
       );
+      reset();
+      setSended(true);
+      setSending(false);
     } catch (error) {
       console.log(`Error`);
     }
   };
 
-  const { handleInputChange, handleSubmit } = useForm(sendEmail, {
-    name: "",
-    email: "",
-    message: "",
-  });
+  const { handleInputChange, handleSubmit, reset, formValues } = useForm<FormField>(
+    sendEmail,
+    FormData
+  );
 
   useLayoutEffect(() => {
     addRef(contactRef, "contact");
@@ -52,6 +70,8 @@ export const FooterLayout = () => {
             type="text"
             placeholder="Name"
             onChange={handleInputChange}
+            value={formValues.name}
+            required
           />
           <input
             name="email"
@@ -59,6 +79,8 @@ export const FooterLayout = () => {
             type="email"
             placeholder="Email"
             onChange={handleInputChange}
+            value={formValues.email}
+            required
           />
           <textarea
             className="form-text txt-text"
@@ -66,29 +88,25 @@ export const FooterLayout = () => {
             id="message"
             placeholder="Message"
             onChange={handleInputChange}
+            value={formValues.message}
+            required
           ></textarea>
           <button className="form-btn txt-subtitle" type="submit">
-            <u>Send</u>
-            <MdArrowForward />
+            {!sended ? <u>Send</u> : <u>Send again</u>}
+            {!sending ? (
+              <MdArrowForward />
+            ) : (
+              <Ring size={40} lineWeight={5} speed={2} color="white" />
+            )}
           </button>
         </form>
       </div>
       <div className="link__box link__box-center mt-3">
-        <div className="link__box-link">
-          <GoMarkGithub className="is-36" />
-        </div>
-        <div className="link__box-link">
-          <GoMarkGithub className="is-36" />
-        </div>
-        <div className="link__box-link">
-          <GoMarkGithub className="is-36" />
-        </div>
-        <div className="link__box-link">
-          <GoMarkGithub className="is-36" />
-        </div>
-        <div className="link__box-link">
-          <GoMarkGithub className="is-36" />
-        </div>
+        {SocialLinks.map(({ link, title, img: Icon }) => (
+          <a key={title} className="link__box-link pointer" href={link} target="_blank">
+            <Icon className="is-36" />
+          </a>
+        ))}
       </div>
       <div className="footer-text">
         <p className="txt-text">
