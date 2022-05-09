@@ -32,10 +32,12 @@ export const FooterLayout = () => {
     try {
       setSending(true);
       const result = await emailjs.sendForm(
-        "service_i1bfjw8",
-        "template_sraopum",
+        import.meta.env.VITE_MAIL_SERVICE_ID ? import.meta.env.VITE_MAIL_SERVICE_ID.toString() : "",
+        import.meta.env.VITE_MAIL_TEMPLATE_ID
+          ? import.meta.env.VITE_MAIL_TEMPLATE_ID.toString()
+          : "",
         form.target,
-        "qnjnyFrIOCfOAJ3ao"
+        import.meta.env.VITE_MAIL_PUBLIC_KEY ? import.meta.env.VITE_MAIL_PUBLIC_KEY.toString() : ""
       );
       reset();
       setSended(true);
