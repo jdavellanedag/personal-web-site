@@ -3,7 +3,7 @@ export interface SkillData {
 }
 
 export interface Skill {
-  id: number;
+  _id: string;
   name: string;
   stars: number;
   img: string;

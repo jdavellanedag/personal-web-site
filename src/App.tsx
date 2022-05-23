@@ -1,12 +1,18 @@
 import { AppProvider } from "./context/AppProvider";
 import { LandingPage } from "./pages/LandingPage";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
+
 import "./styles/app.scss";
 
 function App() {
   return (
-    <AppProvider>
-      <LandingPage />
-    </AppProvider>
+    <QueryClientProvider client={queryClient}>
+      <AppProvider>
+        <LandingPage />
+      </AppProvider>
+    </QueryClientProvider>
   );
 }
 

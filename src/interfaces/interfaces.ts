@@ -15,7 +15,7 @@ export interface JobData {
   jobs: Job[];
 }
 export interface Job {
-  id: number;
+  _id: string;
   title: string;
   year: string;
   description: string;

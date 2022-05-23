@@ -1,21 +1,26 @@
 import { MdSend, MdFileDownload } from "react-icons/md";
 
 import { useScroll } from "../../hooks/useScroll";
-import { ResumeURL } from "../../data/data";
 
-import ProfileImg from "../../assets/img/foto.jpg";
+import { useGetData } from "../../hooks/useGetData";
+import { Link } from "../../interfaces/interfaces";
 
 export const ProfileLayout = () => {
   const { scrollToDiv } = useScroll();
+  const { data } = useGetData<Link>({ resource: "link/resume" });
 
   const onClick = () => {
-    window.open(ResumeURL, "_blank");
+    window.open(data?.link, "_blank");
   };
 
   return (
     <div className="profile">
       <div className="profile__img">
-        <img className="profile__img-avatar" src={ProfileImg} alt="" />
+        <img
+          className="profile__img-avatar"
+          src={import.meta.env.VITE_PROFILE_IMG ? import.meta.env.VITE_PROFILE_IMG.toString() : ""}
+          alt="Julian Avellaneda"
+        />
       </div>
       <div className="profile__content">
         <div className="profile__content-title">

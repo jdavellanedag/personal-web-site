@@ -32,7 +32,9 @@ export const Carrusel = ({ jobs, total }: Props) => {
           <MdArrowForwardIos className="is-48 pointer" onClick={() => handleClick(+1)} />
         </div>
         <div className="carrusel__nav">
-          <span className="carrusel__nav-actual">{active}</span>
+          <span className="carrusel__nav-actual">
+            <b>{active}</b>
+          </span>
           {[...Array(total)].map((n, i) => (
             <span key={i}>
               <MdHorizontalRule

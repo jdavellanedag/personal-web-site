@@ -67,12 +67,8 @@
   &__nav {
     grid-column: 1 / 4;
     grid-row: 3 / 4;
-
     &-actual {
-      font-size: 16px;
-      position: relative;
-      top: -2.5rem;
-      left: 2.5rem;
+      display: none;
     }
   }
 }
@@ -126,6 +122,14 @@
     &__nav {
       grid-column: 3 / 5;
       grid-row: 3 / 4;
+
+      &-actual {
+        display: unset;
+        font-size: 16px;
+        position: relative;
+        top: -2.5rem;
+        left: 2.5rem;
+      }
     }
   }
 }
