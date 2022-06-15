@@ -1,5 +1,5 @@
 import {
-  BlogLayout,
+  BlogSumLayout,
   FooterLayout,
   HeaderLayout,
   JobsLayout,
@@ -17,7 +17,7 @@ export const LandingPage = () => {
         <ProfileLayout />
         <SkillsLayout />
         <JobsLayout />
-        <BlogLayout />
+        <BlogSumLayout />
       </main>
       <footer>
         <FooterLayout />

@@ -1,11 +1,22 @@
 export interface BlogData {
-  blogs: Blog[];
+  blogById: Blog;
 }
 
 export interface Blog {
-  id: number;
-  title: string;
-  subtitle: string;
-  date: string;
-  description: string;
+  _id: string;
+  Title: string;
+  Date: string;
+  urlES?: string;
+  urlEN?: string;
+}
+
+export interface BlogSumaryData {
+  blogLatest: BlogSumary[];
+}
+export interface BlogSumary {
+  _id: string;
+  Title: string;
+  Date: Date;
+  Sumary: string;
+  Time: string;
 }

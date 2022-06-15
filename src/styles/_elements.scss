@@ -36,8 +36,16 @@ footer {
   font-size: clamp(1.5rem, 3vw, 1.5rem);
 }
 
+.btn-1 {
+  padding: 1rem;
+}
+
 .mt-3 {
   margin-top: 3rem;
+}
+
+.pt-3 {
+  padding-top: 3rem;
 }
 .txt-title {
   font-size: clamp(3rem, 10vw, 4rem);
@@ -93,6 +101,10 @@ ul {
     padding: 0.3rem 0.8rem;
     border-radius: 0.5rem;
   }
+}
+
+.txt-justify {
+  text-align: justify;
 }
 
 .link__box {

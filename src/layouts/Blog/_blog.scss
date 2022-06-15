@@ -1,33 +1,4 @@
-.blogs {
-  display: grid;
-  row-gap: 1rem;
-  color: white;
-
-  & a {
-    color: white;
-    justify-self: end;
-  }
-}
-
-.blog-entries {
+.blog-nav {
   display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-  color: black;
-}
-
-.blog-entry {
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.5rem;
-  background: white;
-  padding: 1rem;
-}
-
-@media (min-width: 800px) {
-  .blog-entries {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(15em, 1fr));
-    gap: 1rem;
-  }
+  justify-content: space-around;
 }

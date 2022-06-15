@@ -1,5 +1,4 @@
 import { BsInstagram, BsLinkedin, BsGithub, BsTwitter } from "react-icons/bs";
-import { BlogData } from "../interfaces/blogs";
 import { Link } from "../interfaces/interfaces";
 
 export const SocialLinks: Link[] = [
@@ -24,22 +23,3 @@ export const SocialLinks: Link[] = [
     img: BsTwitter,
   },
 ];
-
-export const Blog: BlogData = {
-  blogs: [
-    {
-      id: 1,
-      title: "There isn't title yet",
-      subtitle: "Pending",
-      date: "19-04-2022",
-      description: "I'll write something cool soon, I'm just thinking",
-    },
-    {
-      id: 2,
-      title: "There isn't title yet",
-      subtitle: "Pending",
-      date: "19-04-2022",
-      description: "I'll write something cool soon, I'm just thinking",
-    },
-  ],
-};
