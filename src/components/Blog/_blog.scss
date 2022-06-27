@@ -5,7 +5,8 @@
   background: white;
   padding: 1rem;
 
-  & p {
+  & p,
+  li {
     @extend .txt-text;
     @extend .txt-justify;
     line-height: 1.6;

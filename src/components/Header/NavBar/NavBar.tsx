@@ -25,13 +25,13 @@ export const NavBar = ({ logo }: Props) => {
         {!isMobile && (
           <ul className="nav__bar-menu-items">
             <li className="nav__bar-menu-item txt-subtitle">
-              <a onClick={() => scrollToDiv("job")}>Trabajos</a>
+              <a onClick={() => scrollToDiv("job")}>Portfolio</a>
             </li>
             <li className="nav__bar-menu-item txt-subtitle">
               <a onClick={() => scrollToDiv("blog")}>Blog</a>
             </li>
             <li className="nav__bar-menu-item txt-subtitle">
-              <a onClick={() => scrollToDiv("contact")}>Contacto</a>
+              <a onClick={() => scrollToDiv("contact")}>Contact</a>
             </li>
           </ul>
         )}
