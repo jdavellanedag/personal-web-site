@@ -1,0 +1,49 @@
+.blog-entry {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  background: white;
+  padding: 1rem;
+
+  & p,
+  li {
+    @extend .txt-text;
+    @extend .txt-justify;
+    line-height: 1.6;
+  }
+
+  & h1 {
+    @extend .txt-title;
+    @extend .txt-bar;
+  }
+
+  & h3 {
+    @extend .txt-subtitle;
+  }
+
+  & li:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.blog-sumary {
+  display: grid;
+  row-gap: 1rem;
+  color: white;
+
+  &-entries {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    color: black;
+  }
+
+  &-entry {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    background: white;
+    padding: 1rem;
+  }
+}

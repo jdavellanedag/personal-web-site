@@ -17,7 +17,7 @@ export const JobsLayout = () => {
 
   return (
     <div ref={jobRef} className="jobs">
-      <h2 className="txt-title txt-bar">Portfolio</h2>
+      <h2 className="txt-title txt-bar">Professional experience</h2>
       {data && <Carrusel jobs={data} total={data.length} />}
     </div>
   );

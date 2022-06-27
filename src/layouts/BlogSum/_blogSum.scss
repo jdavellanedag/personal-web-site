@@ -1,0 +1,10 @@
+.blog-sum {
+  display: grid;
+  row-gap: 1rem;
+  color: white;
+
+  & a {
+    color: white;
+    justify-self: end;
+  }
+}
