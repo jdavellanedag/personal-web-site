@@ -1,3 +1,77 @@
 header {
   background: rgba($color: $light-dark-colour, $alpha: 0.7);
 }
+
+.nav__bar {
+  &-logo {
+    cursor: pointer;
+    & img {
+      max-height: 60px;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    position: absolute;
+    top: 6rem;
+    padding-bottom: 1rem;
+    left: 0;
+    background-color: rgba($color: $light-dark-colour, $alpha: 0.7);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-item {
+      padding-block: 0.5rem;
+      text-align: center;
+      a {
+        border-bottom: 1px solid white;
+        padding: 0.5rem 1rem;
+        color: white;
+
+        &:hover {
+          border-color: $main-red-colour;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $medium) {
+    display: flex;
+    justify-content: space-between;
+    width: min(100%, 64rem);
+    height: 6rem;
+    padding-top: 1em;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-inline: auto;
+    color: white;
+
+    &-menu {
+      width: 100%;
+      & ul {
+        display: flex;
+        justify-content: space-evenly;
+        list-style-type: none;
+      }
+    }
+
+    &-item {
+      & a {
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+          border-bottom: 3px solid $main-red-colour;
+        }
+      }
+    }
+  }
+}
+
+.menu-toggle {
+  background-color: rgba($color: $light-dark-colour, $alpha: 0.1);
+  border: none;
+  z-index: 99;
+  cursor: pointer;
+}
