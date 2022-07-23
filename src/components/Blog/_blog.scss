@@ -4,6 +4,37 @@
   row-gap: 3rem;
   background: white;
   padding: 1rem;
+  overflow: hidden;
+
+  & a {
+    text-decoration: none;
+    color: blue;
+  }
+
+  & img {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  & blockquote {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: $quote-bg;
+    font-style: italic;
+  }
+
+  & pre {
+    font-family: monospace;
+    font-size: inherit;
+    white-space: pre;
+    background-color: $quote-bg;
+    word-wrap: break-word;
+    padding: 0.1rem 0.3rem 0.2rem;
+    border-radius: 0.2rem;
+    overflow-x: scroll;
+  }
 
   & p,
   li {
