@@ -7,20 +7,22 @@ export const LandingPage = () => {
   return (
     <>
       <header>
-        <NavBar className="nav__bar">
-          <NavBarLogo img={MainLogo} className="nav__bar-logo" goTo="home" />
-          <NavBarMenu className="nav__bar-menu">
-            <NavBarItem goTo="job" scroll className="nav__bar-item txt-subtitle">
-              Portfolio
-            </NavBarItem>
-            <NavBarItem goTo="blog" scroll className="nav__bar-item txt-subtitle">
-              Blog
-            </NavBarItem>
-            <NavBarItem goTo="contact" scroll className="nav__bar-item txt-subtitle">
-              Contact
-            </NavBarItem>
-          </NavBarMenu>
-        </NavBar>
+        <div className="nav__container">
+          <NavBar className="nav__bar">
+            <NavBarLogo img={MainLogo} className="nav__bar-logo" goTo="home" />
+            <NavBarMenu className="nav__bar-menu">
+              <NavBarItem goTo="job" scroll className="nav__bar-item txt-subtitle">
+                Portfolio
+              </NavBarItem>
+              <NavBarItem goTo="blog" scroll className="nav__bar-item txt-subtitle">
+                Blog
+              </NavBarItem>
+              <NavBarItem goTo="contact" scroll className="nav__bar-item txt-subtitle">
+                Contact
+              </NavBarItem>
+            </NavBarMenu>
+          </NavBar>
+        </div>
       </header>
       <main>
         <ProfileLayout />
