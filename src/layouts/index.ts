@@ -1,4 +1,3 @@
-export { HeaderLayout } from "./Header/HeaderLayout";
 export { ProfileLayout } from "./Profile/ProfileLayout";
 export { SkillsLayout } from "./Skills/SkillsLayout";
 export { JobsLayout } from "./Jobs/JobsLayout";
