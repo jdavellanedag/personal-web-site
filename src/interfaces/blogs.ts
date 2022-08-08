@@ -1,5 +1,5 @@
 export interface BlogData {
-  blogById: Blog;
+  blogBySlug: Blog;
 }
 
 export interface Blog {
@@ -19,4 +19,5 @@ export interface BlogSumary {
   Date: Date;
   Sumary: string;
   Time: string;
+  Slug: string;
 }
