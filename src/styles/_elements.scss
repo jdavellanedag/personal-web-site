@@ -34,6 +34,12 @@ footer {
   justify-content: center;
   column-gap: 0.5rem;
   font-size: clamp(1.5rem, 3vw, 1.5rem);
+
+  &:hover {
+    box-shadow: rgba($main-red-colour, 0.16) 0px 1px 4px, white 0px 0px 0px 3px;
+  }
+
+  transition: 0.4s;
 }
 
 .btn-1 {
@@ -71,6 +77,23 @@ a,
 button,
 .pointer {
   cursor: pointer;
+}
+
+.over {
+  &:hover {
+    color: $light-red-colour;
+  }
+}
+
+.over-dark {
+  &:hover {
+    color: $gray-colour;
+  }
+}
+
+.over-dark,
+.over {
+  transition: color 0.4s;
 }
 
 .pointer-path {
