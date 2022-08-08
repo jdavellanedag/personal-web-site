@@ -11,7 +11,7 @@ export const Navigation = () => {
       <Routes>
         <Route path="home" element={<LandingPage />} />
         <Route path="blog" element={<BlogsPage />}>
-          <Route path=":blogId" element={<BlogLayout />} />
+          <Route path=":slug" element={<BlogLayout />} />
           <Route path="" element={<BlogsLayout />} />
         </Route>
         <Route path="/*" element={<Navigate to="/home" replace />} />

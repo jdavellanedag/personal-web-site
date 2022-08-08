@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 
 interface MenuProps {
   toggle: () => void;
+  className?: string;
   isOpen: boolean;
 }
 
@@ -20,9 +21,9 @@ const Path = (props: PathProps) => (
 
 const transition = { duration: 0.33 };
 
-export function MenuToggle({ toggle, isOpen }: MenuProps) {
+export function MenuToggle({ toggle, isOpen, className }: MenuProps) {
   return (
-    <button className="menu-toggle" onClick={toggle}>
+    <button className={className} onClick={toggle}>
       <svg width="36" height="36" viewBox="0 0 23 23">
         <Path
           animate={isOpen ? "open" : "closed"}

@@ -9,7 +9,7 @@ export const FooterLinkBoxLayout = ({ lang }: Props) => {
     <>
       <div className="link__box link__box-center mt-3 pt-3">
         {SocialLinks.map(({ link, title, img: Icon }) => (
-          <a key={title} className="link__box-link pointer" href={link} target="_blank">
+          <a key={title} className="link__box-link pointer over-dark" href={link} target="_blank">
             <Icon className="is-36" />
           </a>
         ))}

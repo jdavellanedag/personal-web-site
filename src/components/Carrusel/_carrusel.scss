@@ -28,6 +28,16 @@
     align-self: center;
   }
 
+  &__before,
+  &__next {
+    transition: color 0.4s;
+  }
+
+  &__before:hover,
+  &__next:hover {
+    color: $main-red-colour;
+  }
+
   &__wrapper {
     grid-row: 1 / 3;
     grid-column: 1 / 4;
@@ -67,6 +77,12 @@
   &__nav {
     grid-column: 1 / 4;
     grid-row: 3 / 4;
+    & svg {
+      transition: color 0.4s;
+    }
+    & svg:hover {
+      color: $light-red-colour;
+    }
     &-actual {
       display: none;
     }

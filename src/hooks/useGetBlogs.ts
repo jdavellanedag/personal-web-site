@@ -11,6 +11,7 @@ const LATEST_BLOGS = gql`
       Date
       Sumary
       Time
+      Slug
     }
   }
 `;

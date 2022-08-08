@@ -4,6 +4,7 @@ $light-dark-colour: lighten($main-dark-colour, 10%);
 $main-red-colour: #fd2121;
 $light-red-colour: #e25656;
 $red-wine-colour: #6d0f0f;
+$gray-colour: rgb(167, 161, 161);
 $quote-bg: #f6f6f6;
 
 /** Fonts setting */
@@ -11,3 +12,4 @@ $font-main-type: Arial, Helvetica, sans-serif;
 
 /** Screen sizes */
 $mobile: 800px;
+$medium: 801px;
