@@ -23,6 +23,12 @@ header {
       max-height: 60px;
     }
   }
+
+  &-item {
+    & a {
+      transition: all 0.3s;
+    }
+  }
 }
 
 @media (max-width: $mobile) {
@@ -47,7 +53,8 @@ header {
         color: white;
 
         &:hover {
-          border-color: $main-red-colour;
+          border-bottom: none;
+          box-shadow: rgba($main-red-colour, 0.4) 0px 5px, rgba($main-red-colour, 0.3) 0px 10px;
         }
       }
     }
@@ -69,7 +76,8 @@ header {
       & a {
         color: white;
         &:hover {
-          border-bottom: 3px solid $main-red-colour;
+          box-shadow: rgba($main-red-colour, 0.4) 0px 5px, rgba($main-red-colour, 0.3) 0px 10px,
+            rgba($main-red-colour, 0.2) 0px 15px;
         }
       }
     }

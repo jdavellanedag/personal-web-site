@@ -38,5 +38,13 @@
     display: flex;
     align-items: center;
     column-gap: 1rem;
+
+    &:hover {
+      color: $gray-colour;
+    }
+
+    & {
+      transition: color 0.4s;
+    }
   }
 }
