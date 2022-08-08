@@ -3,14 +3,14 @@ import { NoData } from "../General/NoData";
 import { BlogEntry } from "./BlogEntry";
 
 interface Props {
-  blogId?: string;
+  slug?: string;
 }
 
-export const Blog = ({ blogId = "" }: Props) => {
-  const { data } = useGetBlog({ blogId });
+export const Blog = ({ slug = "" }: Props) => {
+  const { data } = useGetBlog({ slug });
 
-  return data?.blogById.urlEN ? (
-    <BlogEntry content={data?.blogById.urlEN} />
+  return data?.blogBySlug.urlEN ? (
+    <BlogEntry content={data?.blogBySlug.urlEN} />
   ) : (
     <NoData redirectTo="blog" />
   );

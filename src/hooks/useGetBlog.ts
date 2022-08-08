@@ -2,12 +2,12 @@ import { gql, useQuery } from "@apollo/client";
 import { BlogData } from "../interfaces/blogs";
 
 interface Props {
-  blogId: string;
+  slug?: string;
 }
 
-const BLOG = gql`
-  query getBlog($blogId: String!) {
-    blogById(_id: $blogId) {
+const BLOG_BY_SLUG = gql`
+  query getBlogBySlug($slug: String!) {
+    blogBySlug(slug: $slug) {
       _id
       Title
       Date
@@ -17,9 +17,13 @@ const BLOG = gql`
   }
 `;
 
-export const useGetBlog = ({ blogId }: Props) => {
-  const { loading, error, data } = useQuery<BlogData>(BLOG, {
-    variables: { blogId },
+export const useGetBlog = ({ slug }: Props) => {
+  const {
+    loading: loading,
+    error: error,
+    data: data,
+  } = useQuery<BlogData>(BLOG_BY_SLUG, {
+    variables: { slug },
   });
 
   return {
