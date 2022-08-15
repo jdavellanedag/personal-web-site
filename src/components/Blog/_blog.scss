@@ -25,17 +25,6 @@
     font-style: italic;
   }
 
-  & pre {
-    font-family: monospace;
-    font-size: inherit;
-    white-space: pre;
-    background-color: $quote-bg;
-    word-wrap: break-word;
-    padding: 0.1rem 0.3rem 0.2rem;
-    border-radius: 0.2rem;
-    overflow-x: scroll;
-  }
-
   & p,
   li {
     @extend .txt-text;
