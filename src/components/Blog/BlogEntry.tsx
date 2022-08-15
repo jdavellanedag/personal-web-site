@@ -1,7 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { BlogCode } from "./BlogCode";
 
 interface Props {
   content: string;
@@ -15,13 +14,7 @@ export const BlogEntry = ({ content }: Props) => {
         code({ node, inline, className, children, ...props }) {
           const match = /language-(\w+)/.exec(className || "");
           return !inline && match ? (
-            <SyntaxHighlighter
-              children={String(children).replace(/\n$/, "")}
-              style={vscDarkPlus}
-              language={match[1]}
-              PreTag="div"
-              {...props}
-            />
+            <BlogCode children={children} match={match} />
           ) : (
             <code className={className} {...props}>
               {children}
