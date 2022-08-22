@@ -10,9 +10,11 @@ export interface Blog {
   urlEN?: string;
 }
 
-export interface BlogSumaryData {
-  blogLatest: BlogSumary[];
+export interface BlogSumaryResponse {
+  blogLatest?: BlogSumary[];
+  blogs?: BlogSumary[];
 }
+
 export interface BlogSumary {
   _id: string;
   Title: string;

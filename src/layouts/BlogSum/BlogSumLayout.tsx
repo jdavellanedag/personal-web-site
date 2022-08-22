@@ -15,7 +15,7 @@ export const BlogSumLayout = () => {
   return (
     <div ref={blogRef} className="blog-sum">
       <h2 className="txt-title txt-bar">Latest blogs</h2>
-      <BlogEntries />
+      <BlogEntries latest />
       <a className="txt-text over" onClick={() => navigate(`/blog`)}>
         See more
       </a>
