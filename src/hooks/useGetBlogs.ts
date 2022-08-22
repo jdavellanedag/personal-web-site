@@ -1,7 +1,9 @@
 import { gql, useQuery } from "@apollo/client";
-import { BlogSumaryData } from "../interfaces/blogs";
+import { BlogSumary, BlogSumaryResponse } from "../interfaces/blogs";
 
-interface Props {}
+interface Props {
+  latest: boolean;
+}
 
 const LATEST_BLOGS = gql`
   query getLatest {
@@ -16,8 +18,26 @@ const LATEST_BLOGS = gql`
   }
 `;
 
-export const useGetBlogs = ({}: Props) => {
-  const { loading, error, data } = useQuery<BlogSumaryData>(LATEST_BLOGS);
+const BLOGS = gql`
+  query getBlogs {
+    blogs {
+      _id
+      Title
+      Date
+      Sumary
+      Time
+      Slug
+    }
+  }
+`;
+
+export const useGetBlogs = ({ latest }: Props) => {
+  let query = latest ? LATEST_BLOGS : BLOGS;
+  const { loading, error, data: response } = useQuery<BlogSumaryResponse>(query);
+
+  const data: BlogSumary[] | undefined = response?.blogLatest
+    ? response.blogLatest
+    : response?.blogs;
 
   return {
     loading,
