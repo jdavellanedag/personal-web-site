@@ -1,9 +1,9 @@
-import { createContext, RefObject } from "react";
-import { AppState } from "../interfaces/interfaces";
+import { createContext } from "react";
+import { AppState, RefDiv } from "../interfaces/interfaces";
 
 type ContextProps = {
   state: AppState;
-  addRef: (ref: RefObject<HTMLDivElement>, name: string) => void;
+  addRef: (refs: RefDiv[]) => void;
 };
 
 export const AppContext = createContext({} as ContextProps);

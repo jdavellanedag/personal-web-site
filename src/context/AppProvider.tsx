@@ -1,5 +1,5 @@
-import { RefObject, useReducer } from "react";
-import { AppState } from "../interfaces/interfaces";
+import { useReducer } from "react";
+import { AppState, RefDiv } from "../interfaces/interfaces";
 import { AppContext } from "./AppContext";
 import { appReducer } from "./appReducer";
 
@@ -15,8 +15,8 @@ const INITIAL_STATE: AppState = {
 export const AppProvider = ({ children }: TodoProviderProps) => {
   const [state, dispatch] = useReducer(appReducer, INITIAL_STATE);
 
-  const addRef = (ref: RefObject<HTMLDivElement>, name: string) => {
-    dispatch({ type: "addRef", payload: { name, ref } });
+  const addRef = (refs: RefDiv[]) => {
+    dispatch({ type: "addRef", payload: refs });
   };
 
   return <AppContext.Provider value={{ state, addRef }}>{children}</AppContext.Provider>;

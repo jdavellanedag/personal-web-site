@@ -2,7 +2,7 @@ import { AppState, RefDiv } from "../interfaces/interfaces";
 
 type AppAction = {
   type: "addRef";
-  payload: RefDiv;
+  payload: RefDiv[];
 };
 
 export const appReducer = (state: AppState, action: AppAction): AppState => {
@@ -10,7 +10,7 @@ export const appReducer = (state: AppState, action: AppAction): AppState => {
     case "addRef":
       return {
         ...state,
-        refs: [...state.refs, action.payload],
+        refs: action.payload,
       };
 
     default:

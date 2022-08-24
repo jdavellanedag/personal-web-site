@@ -2,8 +2,23 @@ import { BlogSumLayout, FooterLayout, JobsLayout, ProfileLayout, SkillsLayout } 
 import NavBar, { NavBarItem, NavBarLogo, NavBarMenu } from "../components/NavBar";
 
 import MainLogo from "../assets/img/logo.png";
+import { useContext, useLayoutEffect, useRef } from "react";
+import { AppContext } from "../context/AppContext";
 
 export const LandingPage = () => {
+  const { addRef } = useContext(AppContext);
+  const blogRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+  const jobRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    addRef([
+      { ref: contactRef, name: "contact" },
+      { ref: blogRef, name: "blog" },
+      { ref: jobRef, name: "job" },
+    ]);
+  }, []);
+
   return (
     <>
       <header>
@@ -27,11 +42,11 @@ export const LandingPage = () => {
       <main>
         <ProfileLayout />
         <SkillsLayout />
-        <JobsLayout />
-        <BlogSumLayout />
+        <JobsLayout ref={jobRef} />
+        <BlogSumLayout ref={blogRef} />
       </main>
       <footer>
-        <FooterLayout />
+        <FooterLayout ref={contactRef} />
       </footer>
     </>
   );

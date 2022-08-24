@@ -1,4 +1,4 @@
-import { useContext, useLayoutEffect, useRef, useState } from "react";
+import { useContext, useRef, useState, forwardRef } from "react";
 import emailjs from "@emailjs/browser";
 
 import { MdArrowForward } from "react-icons/md";
@@ -6,7 +6,6 @@ import { Ring } from "@uiball/loaders";
 
 import { AppContext } from "../../context/AppContext";
 import { useForm } from "../../hooks/useForm";
-import { SocialLinks } from "../../data/data";
 import { FooterLinkBoxLayout } from "./FooterLinkBoxLayout";
 
 interface FormField {
@@ -21,11 +20,10 @@ const FormData: FormField = {
   message: "",
 };
 
-export const FooterLayout = () => {
-  const { addRef, state } = useContext(AppContext);
+export const FooterLayout = forwardRef<HTMLDivElement>(({}, ref) => {
+  const { state } = useContext(AppContext);
   const [sending, setSending] = useState(false);
   const [sended, setSended] = useState(false);
-  const contactRef = useRef<HTMLDivElement>(null);
   const form = useRef<HTMLFormElement>(null);
   const { lang } = state;
 
@@ -53,12 +51,8 @@ export const FooterLayout = () => {
     FormData
   );
 
-  useLayoutEffect(() => {
-    addRef(contactRef, "contact");
-  }, []);
-
   return (
-    <div ref={contactRef} className="footer-content">
+    <div ref={ref} className="footer-content">
       <p className="txt-title">
         <b>
           Let's <br />
@@ -107,4 +101,4 @@ export const FooterLayout = () => {
       <FooterLinkBoxLayout lang={lang} />
     </div>
   );
-};
+});
