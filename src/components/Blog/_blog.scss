@@ -35,6 +35,7 @@
   & h1 {
     @extend .txt-title;
     @extend .txt-bar;
+    margin-bottom: 2rem;
   }
 
   & h3 {
